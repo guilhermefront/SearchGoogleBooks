@@ -50,14 +50,15 @@ body {
 
   &__booklist {
     list-style-type: none;
-    margin-top: 6.2rem;
+    margin-top: 3.8rem;
+
     &--item {
+      margin-top: 2.4rem;
       &--container {
         width: 62rem;
         height: 12.9rem;
         background: #303a52;
         border-radius: 0.4rem;
-
         &--bookinfo {
           position: relative;
           top: 2.3rem;

@@ -36,56 +36,58 @@ body {
     font-family: Roboto; }
   .app__booklist {
     list-style-type: none;
-    margin-top: 6.2rem; }
-    .app__booklist--item--container {
-      width: 62rem;
-      height: 12.9rem;
-      background: #303a52;
-      border-radius: 0.4rem; }
-      .app__booklist--item--container--bookinfo {
-        position: relative;
-        top: 2.3rem;
-        left: 3.3rem;
-        display: flex;
-        width: 50rem;
-        height: 8.3rem; }
-        .app__booklist--item--container--bookinfo--image {
-          width: 6rem;
-          height: 8.3rem;
-          background: #626262;
-          border: 0; }
-        .app__booklist--item--container--bookinfo--text {
+    margin-top: 3.8rem; }
+    .app__booklist--item {
+      margin-top: 2.4rem; }
+      .app__booklist--item--container {
+        width: 62rem;
+        height: 12.9rem;
+        background: #303a52;
+        border-radius: 0.4rem; }
+        .app__booklist--item--container--bookinfo {
+          position: relative;
+          top: 2.3rem;
+          left: 3.3rem;
           display: flex;
-          flex-direction: column;
-          margin-left: 2.2rem; }
-          .app__booklist--item--container--bookinfo--text--title {
-            margin-top: 0.7rem;
-            position: relative;
-            top: 0;
-            font: 400 2rem Roboto;
-            color: #fc85ae; }
-          .app__booklist--item--container--bookinfo--text--author {
-            margin-top: 0.036rem;
-            font: 15px Roboto;
-            color: #ae627c; }
-      .app__booklist--item--container--list {
-        list-style-type: none;
-        display: flex;
-        justify-self: end;
-        align-self: end;
-        position: relative;
-        top: 0.8rem;
-        left: 24.3rem; }
-        .app__booklist--item--container--list--item {
-          margin-left: 1.2rem; }
-          .app__booklist--item--container--list--item--title {
-            font-family: Roboto;
-            font-size: 1.3rem;
-            line-height: 1.5rem;
-            color: #777777; }
-          .app__booklist--item--container--list--item--content {
-            font-family: Roboto;
-            margin-left: 0.6rem;
-            font-size: 1.3rem;
-            line-height: 1.5rem;
-            color: #8b8b8b; }
+          width: 50rem;
+          height: 8.3rem; }
+          .app__booklist--item--container--bookinfo--image {
+            width: 6rem;
+            height: 8.3rem;
+            background: #626262;
+            border: 0; }
+          .app__booklist--item--container--bookinfo--text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2.2rem; }
+            .app__booklist--item--container--bookinfo--text--title {
+              margin-top: 0.7rem;
+              position: relative;
+              top: 0;
+              font: 400 2rem Roboto;
+              color: #fc85ae; }
+            .app__booklist--item--container--bookinfo--text--author {
+              margin-top: 0.036rem;
+              font: 15px Roboto;
+              color: #ae627c; }
+        .app__booklist--item--container--list {
+          list-style-type: none;
+          display: flex;
+          justify-self: end;
+          align-self: end;
+          position: relative;
+          top: 0.8rem;
+          left: 24.3rem; }
+          .app__booklist--item--container--list--item {
+            margin-left: 1.2rem; }
+            .app__booklist--item--container--list--item--title {
+              font-family: Roboto;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #777777; }
+            .app__booklist--item--container--list--item--content {
+              font-family: Roboto;
+              margin-left: 0.6rem;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #8b8b8b; }
