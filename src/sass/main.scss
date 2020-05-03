@@ -1,0 +1,121 @@
+@mixin resp($breakpoint) {
+  @if ($breakpoint == 1200) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include resp(1200) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background: #fc85ae;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    margin-top: 9.9rem;
+    font-family: Roboto;
+    font-size: 3.5rem;
+    line-height: 4.1rem;
+    color: #303a52;
+  }
+  &__searchbar {
+    margin-top: 34px;
+    background: #ffbfd5;
+    border-radius: 0.4rem;
+    width: 62rem;
+    height: 5.9rem;
+    border: 0;
+    padding: 0rem 2.5rem;
+    font-family: Roboto;
+  }
+
+  &__booklist {
+    list-style-type: none;
+    margin-top: 6.2rem;
+    &--item {
+      &--container {
+        width: 62rem;
+        height: 12.9rem;
+        background: #303a52;
+        border-radius: 0.4rem;
+
+        &--bookinfo {
+          position: relative;
+          top: 2.3rem;
+          left: 3.3rem;
+          display: flex;
+          width: 50rem;
+          height: 8.3rem;
+          &--image {
+            width: 6rem;
+            height: 8.3rem;
+            background: #626262;
+            border: 0;
+          }
+          &--text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2.2rem;
+            &--title {
+              margin-top: 0.7rem;
+              position: relative;
+              top: 0;
+              font: 400 2rem Roboto;
+              color: #fc85ae;
+            }
+            &--author {
+              margin-top: 0.036rem;
+              font: 15px Roboto;
+              color: #ae627c;
+            }
+          }
+        }
+
+        &--list {
+          list-style-type: none;
+          display: flex;
+          justify-self: end;
+          align-self: end;
+          position: relative;
+          top: 0.8rem;
+          left: 24.3rem;
+          &--item {
+            margin-left: 1.2rem;
+            &--title {
+              font-family: Roboto;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #777777;
+            }
+            &--content {
+              font-family: Roboto;
+              margin-left: 0.6rem;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #8b8b8b;
+            }
+          }
+        }
+      }
+    }
+  }
+}
