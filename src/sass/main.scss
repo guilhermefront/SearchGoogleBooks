@@ -38,83 +38,77 @@ body {
     color: #303a52;
   }
   &__searchbar {
-    margin-top: 34px;
+    margin-top: 2.6rem;
     background: #ffbfd5;
     border-radius: 0.4rem;
-    width: 62rem;
+    width: 54.8rem;
     height: 5.9rem;
     border: 0;
-    padding: 0rem 2.5rem;
+    padding: 0rem 4.5rem 0rem 2.5rem;
+    user-select: none;
+    font-family: Roboto;
+    font-size: 1.8rem;
+    &::after {
+      content: "";
+      display: block;
+      background-color: red;
+    }
+  }
+
+  &__searchicon {
+    position: absolute;
+    margin-top: 4.3rem;
+    margin-left: -3.7rem;
+  }
+
+  &__erro {
+    margin-top: 25px;
+    font-size: 16px;
     font-family: Roboto;
   }
 
   &__booklist {
     list-style-type: none;
-    margin-top: 3.8rem;
+    margin-top: 5.9rem;
+    display: grid;
+    width: 54.8rem;
+    gap: 5.1rem 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 
     &--item {
-      margin-top: 2.4rem;
-      &--container {
-        width: 62rem;
-        height: 12.9rem;
-        background: #303a52;
+      min-height: 32.5rem;
+      display: flex;
+      flex-direction: column;
+      &--image {
+        width: 14.9rem;
         border-radius: 0.4rem;
-        &--bookinfo {
+        min-height: 23rem;
+        background: #626262;
+        border: 0;
+      }
+      &--text {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.7rem;
+        margin-left: 0.01rem;
+        height: 100%;
+
+        &--title {
           position: relative;
-          top: 2.3rem;
-          left: 3.3rem;
-          display: flex;
-          width: 50rem;
-          height: 8.3rem;
-          &--image {
-            width: 6rem;
-            height: 8.3rem;
-            background: #626262;
-            border: 0;
-          }
-          &--text {
-            display: flex;
-            flex-direction: column;
-            margin-left: 2.2rem;
-            &--title {
-              margin-top: 0.7rem;
-              position: relative;
-              top: 0;
-              font: 400 2rem Roboto;
-              color: #fc85ae;
-            }
-            &--author {
-              margin-top: 0.036rem;
-              font: 15px Roboto;
-              color: #ae627c;
-            }
+          top: 0;
+          font: 400 1.7rem Roboto;
+          color: #fc85ae;
+          line-height: 125%;
+          color: #010310;
+          &::first-letter {
+            text-transform: capitalize;
           }
         }
-
-        &--list {
-          list-style-type: none;
-          display: flex;
-          justify-self: end;
-          align-self: end;
-          position: relative;
-          top: 0.8rem;
-          left: 24.3rem;
-          &--item {
-            margin-left: 1.2rem;
-            &--title {
-              font-family: Roboto;
-              font-size: 1.3rem;
-              line-height: 1.5rem;
-              color: #777777;
-            }
-            &--content {
-              font-family: Roboto;
-              margin-left: 0.6rem;
-              font-size: 1.3rem;
-              line-height: 1.5rem;
-              color: #8b8b8b;
-            }
-          }
+        &--author {
+          margin-top: 0.6rem;
+          font: 1.5rem Roboto;
+          color: #4c4e5e;
         }
       }
     }

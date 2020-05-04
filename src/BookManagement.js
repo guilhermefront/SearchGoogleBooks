@@ -5,18 +5,43 @@ const GlobalDispatch = React.createContext();
 
 export const BookManagement = ({ children }) => {
   const initialState = {
-    bookData: [
-      {
-        title: "teste",
-      },
-      {
-        title: "teste2",
-      },
-    ],
+    bookData: [],
+    querySucess: "false",
+    query: "alice",
+    situation: "nothing",
+    url:
+      "https://www.googleapis.com/books/v1/volumes?q=alice&filter=free-ebooks&key=AIzaSyBvBig7VqgizPMI7CU0Xxa7LxuO5lUMtTo",
   };
 
   const reducer = (state, action) => {
     switch (action.type) {
+      case "BOOK_ADD":
+        return {
+          ...state,
+          bookData: action.payload,
+        };
+      case "QUERY":
+        return {
+          ...state,
+          query: action.payload,
+        };
+      case "SET_URL":
+        return {
+          ...state,
+          url: `https://www.googleapis.com/books/v1/volumes?q=${state.query}&key=AIzaSyBvBig7VqgizPMI7CU0Xxa7LxuO5lUMtTo`,
+          query: "",
+        };
+      case "ERRO":
+        return {
+          ...state,
+          bookData: [],
+          situation: "erro",
+        };
+      case "REINITIALIZER":
+        return {
+          ...state,
+          situation: "normal",
+        };
       default:
         return state;
     }
