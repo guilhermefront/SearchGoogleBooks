@@ -57,8 +57,8 @@ body {
     margin-left: -3.7rem;
     cursor: pointer; }
   .app--erro {
-    margin-top: 25px;
-    font-size: 16px;
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
     font-family: Roboto; }
   .app__booklist {
     list-style-type: none;
@@ -79,6 +79,9 @@ body {
         @media (max-width: 420px) {
           .app__booklist--item--container {
             height: 14rem; } }
+        @media (max-width: 320px) {
+          .app__booklist--item--container {
+            height: 15rem; } }
         .app__booklist--item--container--bookinfo {
           position: relative;
           top: 2.3rem;
@@ -93,6 +96,9 @@ body {
           @media (max-width: 420px) {
             .app__booklist--item--container--bookinfo {
               top: 2.6rem; } }
+          @media (max-width: 320px) {
+            .app__booklist--item--container--bookinfo {
+              top: 3rem; } }
           .app__booklist--item--container--bookinfo--image {
             width: 6rem;
             height: 8.3rem;
@@ -113,8 +119,9 @@ body {
               color: #fc85ae; }
             .app__booklist--item--container--bookinfo--text--author {
               margin-top: 0.35rem;
-              font: 15px Roboto;
-              color: #ae627c; }
+              font: 1.5rem Roboto;
+              color: #ae627c;
+              text-transform: capitalize; }
         .app__booklist--item--container--list {
           list-style-type: none;
           display: flex;
@@ -130,6 +137,10 @@ body {
             .app__booklist--item--container--list {
               left: 25% !important;
               top: 2rem; } }
+          @media (max-width: 320px) {
+            .app__booklist--item--container--list {
+              left: 40% !important;
+              top: 3rem; } }
           .app__booklist--item--container--list--item {
             margin-left: 1.2rem; }
             .app__booklist--item--container--list--item--title {
