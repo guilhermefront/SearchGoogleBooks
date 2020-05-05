@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/googlebooksearch/static/css/main.3215df2b.chunk.css",
-    "main.js": "/googlebooksearch/static/js/main.f0728e1e.chunk.js",
-    "main.js.map": "/googlebooksearch/static/js/main.f0728e1e.chunk.js.map",
-    "runtime-main.js": "/googlebooksearch/static/js/runtime-main.985b87b4.js",
-    "runtime-main.js.map": "/googlebooksearch/static/js/runtime-main.985b87b4.js.map",
-    "static/js/2.b5a2459f.chunk.js": "/googlebooksearch/static/js/2.b5a2459f.chunk.js",
-    "static/js/2.b5a2459f.chunk.js.map": "/googlebooksearch/static/js/2.b5a2459f.chunk.js.map",
-    "index.html": "/googlebooksearch/index.html",
-    "precache-manifest.d21ac272a622ecd34f105ceef7c5e72e.js": "/googlebooksearch/precache-manifest.d21ac272a622ecd34f105ceef7c5e72e.js",
-    "service-worker.js": "/googlebooksearch/service-worker.js",
-    "static/css/main.3215df2b.chunk.css.map": "/googlebooksearch/static/css/main.3215df2b.chunk.css.map",
-    "static/js/2.b5a2459f.chunk.js.LICENSE.txt": "/googlebooksearch/static/js/2.b5a2459f.chunk.js.LICENSE.txt"
+    "main.css": "/searchgooglebooks/static/css/main.3215df2b.chunk.css",
+    "main.js": "/searchgooglebooks/static/js/main.7619be14.chunk.js",
+    "main.js.map": "/searchgooglebooks/static/js/main.7619be14.chunk.js.map",
+    "runtime-main.js": "/searchgooglebooks/static/js/runtime-main.2d0b755f.js",
+    "runtime-main.js.map": "/searchgooglebooks/static/js/runtime-main.2d0b755f.js.map",
+    "static/js/2.b5a2459f.chunk.js": "/searchgooglebooks/static/js/2.b5a2459f.chunk.js",
+    "static/js/2.b5a2459f.chunk.js.map": "/searchgooglebooks/static/js/2.b5a2459f.chunk.js.map",
+    "index.html": "/searchgooglebooks/index.html",
+    "precache-manifest.9135ce924db42958dbdd3db5daccf6c5.js": "/searchgooglebooks/precache-manifest.9135ce924db42958dbdd3db5daccf6c5.js",
+    "service-worker.js": "/searchgooglebooks/service-worker.js",
+    "static/css/main.3215df2b.chunk.css.map": "/searchgooglebooks/static/css/main.3215df2b.chunk.css.map",
+    "static/js/2.b5a2459f.chunk.js.LICENSE.txt": "/searchgooglebooks/static/js/2.b5a2459f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.985b87b4.js",
+    "static/js/runtime-main.2d0b755f.js",
     "static/js/2.b5a2459f.chunk.js",
     "static/css/main.3215df2b.chunk.css",
-    "static/js/main.f0728e1e.chunk.js"
+    "static/js/main.7619be14.chunk.js"
   ]
 }
