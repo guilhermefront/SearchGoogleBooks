@@ -36,6 +36,9 @@ body {
     font-size: 3.5rem;
     line-height: 4.1rem;
     color: #303a52;
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
   &__searchbar {
     margin-top: 2.6rem;
@@ -59,6 +62,7 @@ body {
     position: absolute;
     margin-top: 4.3rem;
     margin-left: -3.7rem;
+    cursor: pointer;
   }
 
   &__erro {
@@ -69,46 +73,71 @@ body {
 
   &__booklist {
     list-style-type: none;
-    margin-top: 5.9rem;
-    display: grid;
-    width: 54.8rem;
-    gap: 5.1rem 5rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-
+    margin-top: 3.9rem;
     &--item {
-      min-height: 32.5rem;
-      display: flex;
-      flex-direction: column;
-      &--image {
-        width: 14.9rem;
+      margin-top: 2.3rem;
+      &--container {
+        width: 54.8rem;
+        height: 12.9rem;
+        background: #303a52;
         border-radius: 0.4rem;
-        min-height: 23rem;
-        background: #626262;
-        border: 0;
-      }
-      &--text {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1.7rem;
-        margin-left: 0.01rem;
-        height: 100%;
 
-        &--title {
+        &--bookinfo {
           position: relative;
-          top: 0;
-          font: 400 1.7rem Roboto;
-          color: #fc85ae;
-          line-height: 125%;
-          color: #010310;
-          &::first-letter {
-            text-transform: capitalize;
+          top: 2.3rem;
+          left: 3rem;
+          display: flex;
+          width: 50rem;
+          height: 8.3rem;
+          &--image {
+            width: 6rem;
+            height: 8.3rem;
+            background: #626262;
+            border: 0;
+          }
+          &--text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2.3rem;
+            &--title {
+              margin-top: 0.7rem;
+              position: relative;
+              top: 0;
+              font: 400 2rem Roboto;
+              color: #fc85ae;
+            }
+            &--author {
+              margin-top: 0.35rem;
+              font: 15px Roboto;
+              color: #ae627c;
+            }
           }
         }
-        &--author {
-          margin-top: 0.6rem;
-          font: 1.5rem Roboto;
-          color: #4c4e5e;
+
+        &--list {
+          list-style-type: none;
+          display: flex;
+          justify-self: end;
+          align-self: end;
+          position: relative;
+          top: 0.8rem;
+          left: 25.3rem;
+          &--item {
+            margin-left: 1.2rem;
+            &--title {
+              font-family: Roboto;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #777777;
+            }
+            &--content {
+              font-family: Roboto;
+              margin-left: 0.6rem;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+              color: #8b8b8b;
+            }
+          }
         }
       }
     }

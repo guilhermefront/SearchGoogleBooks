@@ -19,11 +19,21 @@ const SearchBar = () => {
         className="app__searchbar"
         type="text"
         value={query}
+        placeholder="Search"
         onChange={(e) => {
           dispatch({ type: "QUERY", payload: e.target.value });
         }}
       ></input>
-      <img src="./mdi_search.svg" className="app__searchicon"></img>
+      <img
+        alt="searchicon"
+        onClick={() => {
+          dispatch({
+            type: "SET_URL",
+          });
+        }}
+        src="./mdi_search.svg"
+        className="app__searchicon"
+      ></img>
     </form>
   );
 };

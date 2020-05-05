@@ -5,7 +5,7 @@ import { GlobalDispatch } from "./BookManagement";
 const BookList = () => {
   const globalProps = useContext(GlobalProps);
   const dispatch = useContext(GlobalDispatch);
-  const { bookData, situation, url } = globalProps;
+  const { bookData, situation, url, query } = globalProps;
 
   useEffect(() => {
     const bookAsync = async () => {
@@ -24,7 +24,13 @@ const BookList = () => {
       }
     };
 
-    bookAsync();
+    console.log(url);
+    if (
+      url !==
+      "https://www.googleapis.com/books/v1/volumes?q=&key=AIzaSyBvBig7VqgizPMI7CU0Xxa7LxuO5lUMtTo"
+    ) {
+      bookAsync();
+    }
   }, [url]);
 
   return situation === "erro" ? (
@@ -33,23 +39,76 @@ const BookList = () => {
     <ul className="app__booklist">
       {bookData.map((dataValues) => (
         <li key={dataValues.id} className="app__booklist--item">
-          <img
-            alt="book illustration"
-            src={
-              dataValues.volumeInfo.imageLinks.smallThumbnail ||
-              dataValues.volumeInfo.imageLinks.thumbnail
-            }
-            className="app__booklist--item--image"
-          ></img>
-          <div className="app__booklist--item--text">
-            <span className="app__booklist--item--text--title">
-              {dataValues.volumeInfo.title.length > 35
-                ? `${dataValues.volumeInfo.title.slice(0, 35)}...`
-                : dataValues.volumeInfo.title}
-            </span>
-            <p className="app__booklist--item--text--author">
-              {dataValues.volumeInfo.authors}
-            </p>
+          <div className="app__booklist--item--container">
+            <div className="app__booklist--item--container--bookinfo">
+              <img
+                alt="book illustration"
+                src={
+                  dataValues.volumeInfo &&
+                  dataValues.volumeInfo.imageLinks &&
+                  dataValues.volumeInfo.imageLinks.smallThumbnail
+                }
+                className="app__booklist--item--container--bookinfo--image"
+              ></img>
+              <div className="app__booklist--item--container--bookinfo--text">
+                <span className="app__booklist--item--container--bookinfo--text--title">
+                  {dataValues.volumeInfo.title.length > 60
+                    ? `${dataValues.volumeInfo.title.slice(0, 60)}...`
+                    : dataValues.volumeInfo.title}
+                </span>
+                {dataValues.volumeInfo && dataValues.volumeInfo.authors && (
+                  <p className="app__booklist--item--container--bookinfo--text--author">
+                    {dataValues.volumeInfo.authors.join(", ")}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <ul
+              style={{
+                left: dataValues.volumeInfo.pageCount === undefined && "21rem",
+                top:
+                  dataValues.volumeInfo &&
+                  dataValues.volumeInfo.authors &&
+                  `${
+                    dataValues.volumeInfo.authors[0]
+                      ? dataValues.volumeInfo.authors[0]
+                      : dataValues.volumeInfo.authors[1] &&
+                        dataValues.volumeInfo.authors[1]
+                  }`.length > 23 &&
+                  "1.8rem",
+              }}
+              className="app__booklist--item--container--list"
+            >
+              <li className="app__booklist--item--container--list--item">
+                <span className="app__booklist--item--container--list--item--title">
+                  Year:
+                </span>
+                <span className="app__booklist--item--container--list--item--content">
+                  {dataValues.volumeInfo.publishedDate === undefined
+                    ? "unknown"
+                    : `${dataValues.volumeInfo.publishedDate}`.slice(0, 4)}
+                </span>
+              </li>
+              <li className="app__booklist--item--container--list--item">
+                <span className="app__booklist--item--container--list--item--title">
+                  Pages:
+                </span>
+                <span className="app__booklist--item--container--list--item--content">
+                  {dataValues.volumeInfo.pageCount === undefined
+                    ? "unknown"
+                    : dataValues.volumeInfo.pageCount}
+                </span>
+              </li>
+              <li className="app__booklist--item--container--list--item">
+                <span className="app__booklist--item--container--list--item--title">
+                  Language:
+                </span>
+                <span className="app__booklist--item--container--list--item--content">
+                  {`${dataValues.volumeInfo.language}`.toUpperCase()}
+                </span>
+              </li>
+            </ul>
           </div>
         </li>
       ))}

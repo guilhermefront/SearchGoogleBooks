@@ -7,10 +7,10 @@ export const BookManagement = ({ children }) => {
   const initialState = {
     bookData: [],
     querySucess: "false",
-    query: "alice",
+    query: "",
     situation: "nothing",
     url:
-      "https://www.googleapis.com/books/v1/volumes?q=alice&filter=free-ebooks&key=AIzaSyBvBig7VqgizPMI7CU0Xxa7LxuO5lUMtTo",
+      "https://www.googleapis.com/books/v1/volumes?q=&key=AIzaSyBvBig7VqgizPMI7CU0Xxa7LxuO5lUMtTo",
   };
 
   const reducer = (state, action) => {
