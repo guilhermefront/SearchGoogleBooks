@@ -81,7 +81,6 @@ const BookList = () => {
 
             <ul
               style={{
-                left: dataValues.volumeInfo.pageCount === undefined && "21rem",
                 top:
                   dataValues.volumeInfo &&
                   dataValues.volumeInfo.authors &&
@@ -101,7 +100,7 @@ const BookList = () => {
                 </span>
                 <span className="app__booklist--item--container--list--item--content">
                   {dataValues.volumeInfo.publishedDate === undefined
-                    ? "unknown"
+                    ? "unk"
                     : `${dataValues.volumeInfo.publishedDate}`.slice(0, 4)}
                 </span>
               </li>
@@ -112,7 +111,7 @@ const BookList = () => {
                   </span>
                   <span className="app__booklist--item--container--list--item--content">
                     {dataValues.volumeInfo.pageCount === undefined
-                      ? "unknown"
+                      ? "unk"
                       : dataValues.volumeInfo.pageCount}
                   </span>
                 </li>
