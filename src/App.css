@@ -83,6 +83,9 @@ body {
         @media (max-width: 320px) {
           .app__booklist--item--container {
             height: 15rem; } }
+        @media (max-width: 320px) {
+          .app__booklist--item--container {
+            height: 15rem; } }
         .app__booklist--item--container--bookinfo {
           position: relative;
           top: 2.3rem;
@@ -97,6 +100,9 @@ body {
           @media (max-width: 420px) {
             .app__booklist--item--container--bookinfo {
               top: 2.6rem; } }
+          @media (max-width: 320px) {
+            .app__booklist--item--container--bookinfo {
+              top: 3rem; } }
           @media (max-width: 320px) {
             .app__booklist--item--container--bookinfo {
               top: 3rem; } }
@@ -136,11 +142,15 @@ body {
               left: 30% !important; } }
           @media (max-width: 420px) {
             .app__booklist--item--container--list {
-              left: 25% !important;
+              left: 45% !important;
               top: 2rem; } }
           @media (max-width: 320px) {
             .app__booklist--item--container--list {
-              left: 40% !important;
+              left: 35% !important;
+              top: 3rem; } }
+          @media (max-width: 320px) {
+            .app__booklist--item--container--list {
+              left: 35% !important;
               top: 3rem; } }
           .app__booklist--item--container--list--item {
             margin-left: 1.2rem; }

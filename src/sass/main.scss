@@ -29,6 +29,11 @@
       @content;
     }
   }
+  @if ($breakpoint == 320) {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
 }
 
 *,
@@ -190,11 +195,11 @@ body {
             left: 30% !important;
           }
           @include resp(420) {
-            left: 25% !important;
+            left: 45% !important;
             top: 2rem;
           }
           @include resp(320) {
-            left: 40% !important;
+            left: 35% !important;
             top: 3rem;
           }
           &--item {
