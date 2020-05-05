@@ -2,7 +2,7 @@
   "name": "libgensearch",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://guilhermesnd.github.io/searchgooglebooks",
+  "homepage": "http://guilhermesnd.github.io/SearchGoogleBooks",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
