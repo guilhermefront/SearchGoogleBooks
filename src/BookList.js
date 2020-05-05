@@ -13,7 +13,7 @@ const BookList = () => {
         dispatch({ type: "REINITIALIZER" });
         const result = await fetch(url);
         const data = await result.json();
-        console.log(data.items);
+
         if (data.items === undefined) {
           dispatch({ type: "ERRO" });
         } else {
@@ -52,15 +52,30 @@ const BookList = () => {
               ></img>
               <div className="app__booklist--item--container--bookinfo--text">
                 <span className="app__booklist--item--container--bookinfo--text--title">
-                  {dataValues.volumeInfo.title.length > 60
+                  {window.innerWidth <= 500 &&
+                  dataValues.volumeInfo.title.length > 35
+                    ? `${dataValues.volumeInfo.title.slice(0, 35)}...`
+                    : dataValues.volumeInfo.title.length > 60
                     ? `${dataValues.volumeInfo.title.slice(0, 60)}...`
                     : dataValues.volumeInfo.title}
                 </span>
-                {dataValues.volumeInfo && dataValues.volumeInfo.authors && (
-                  <p className="app__booklist--item--container--bookinfo--text--author">
-                    {dataValues.volumeInfo.authors.join(", ")}
-                  </p>
-                )}
+                {dataValues.volumeInfo &&
+                  dataValues.volumeInfo.authors &&
+                  window.innerWidth <= 500 &&
+                  (`${
+                    dataValues.volumeInfo.authors[0]
+                      ? dataValues.volumeInfo.authors[0]
+                      : dataValues.volumeInfo.authors[1] &&
+                        dataValues.volumeInfo.authors[1]
+                  }`.length > 15 ? (
+                    <p className="app__booklist--item--container--bookinfo--text--author">
+                      {dataValues.volumeInfo.authors[0].slice(0, 15)}
+                    </p>
+                  ) : (
+                    <p className="app__booklist--item--container--bookinfo--text--author">
+                      {dataValues.volumeInfo.authors.join(", ")}
+                    </p>
+                  ))}
               </div>
             </div>
 
@@ -75,7 +90,7 @@ const BookList = () => {
                       ? dataValues.volumeInfo.authors[0]
                       : dataValues.volumeInfo.authors[1] &&
                         dataValues.volumeInfo.authors[1]
-                  }`.length > 23 &&
+                  }`.length > 21 &&
                   "1.8rem",
               }}
               className="app__booklist--item--container--list"
@@ -90,16 +105,18 @@ const BookList = () => {
                     : `${dataValues.volumeInfo.publishedDate}`.slice(0, 4)}
                 </span>
               </li>
-              <li className="app__booklist--item--container--list--item">
-                <span className="app__booklist--item--container--list--item--title">
-                  Pages:
-                </span>
-                <span className="app__booklist--item--container--list--item--content">
-                  {dataValues.volumeInfo.pageCount === undefined
-                    ? "unknown"
-                    : dataValues.volumeInfo.pageCount}
-                </span>
-              </li>
+              {window.innerWidth <= 400 ? null : (
+                <li className="app__booklist--item--container--list--item">
+                  <span className="app__booklist--item--container--list--item--title">
+                    Pages:
+                  </span>
+                  <span className="app__booklist--item--container--list--item--content">
+                    {dataValues.volumeInfo.pageCount === undefined
+                      ? "unknown"
+                      : dataValues.volumeInfo.pageCount}
+                  </span>
+                </li>
+              )}
               <li className="app__booklist--item--container--list--item">
                 <span className="app__booklist--item--container--list--item--title">
                   Language:

@@ -7,6 +7,7 @@ const SearchBar = () => {
   const { query, url } = globalProps;
   return (
     <form
+      className="app__form"
       onSubmit={(e) => {
         e.preventDefault();
 
@@ -16,7 +17,7 @@ const SearchBar = () => {
       }}
     >
       <input
-        className="app__searchbar"
+        className="app__form--searchbar"
         type="text"
         value={query}
         placeholder="Search"
@@ -32,7 +33,7 @@ const SearchBar = () => {
           });
         }}
         src="./mdi_search.svg"
-        className="app__searchicon"
+        className="app__form--searchicon"
       ></img>
     </form>
   );

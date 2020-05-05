@@ -4,6 +4,26 @@
       @content;
     }
   }
+  @if ($breakpoint == 850) {
+    @media (max-width: 850px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 640) {
+    @media (max-width: 640px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 500) {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 420) {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
 }
 
 *,
@@ -16,8 +36,11 @@
 
 html {
   font-size: 62.5%;
-  @include resp(1200) {
-    font-size: 62.5%;
+  @include resp(850) {
+    font-size: 58%;
+  }
+  @include resp(640) {
+    font-size: 50%;
   }
 }
 
@@ -40,32 +63,41 @@ body {
       text-transform: capitalize;
     }
   }
-  &__searchbar {
-    margin-top: 2.6rem;
-    background: #ffbfd5;
-    border-radius: 0.4rem;
-    width: 54.8rem;
-    height: 5.9rem;
-    border: 0;
-    padding: 0rem 4.5rem 0rem 2.5rem;
-    user-select: none;
-    font-family: Roboto;
-    font-size: 1.8rem;
-    &::after {
-      content: "";
-      display: block;
-      background-color: red;
+
+  &__form {
+    @include resp(500) {
+      width: 80%;
+    }
+    &--searchbar {
+      width: 54.8rem;
+      @include resp(500) {
+        width: 100%;
+      }
+      margin-top: 2.6rem;
+      background: #ffbfd5;
+      border-radius: 0.4rem;
+
+      height: 5.9rem;
+      border: 0;
+      padding: 0rem 4.5rem 0rem 2.5rem;
+      user-select: none;
+      font-family: Roboto;
+      font-size: 1.8rem;
+      &::after {
+        content: "";
+        display: block;
+        background-color: red;
+      }
+    }
+
+    &--searchicon {
+      position: absolute;
+      margin-top: 4.3rem;
+      margin-left: -3.7rem;
+      cursor: pointer;
     }
   }
-
-  &__searchicon {
-    position: absolute;
-    margin-top: 4.3rem;
-    margin-left: -3.7rem;
-    cursor: pointer;
-  }
-
-  &__erro {
+  &--erro {
     margin-top: 25px;
     font-size: 16px;
     font-family: Roboto;
@@ -74,11 +106,20 @@ body {
   &__booklist {
     list-style-type: none;
     margin-top: 3.9rem;
+    @include resp(500) {
+      width: 80%;
+    }
     &--item {
       margin-top: 2.3rem;
       &--container {
         width: 54.8rem;
+        @include resp(500) {
+          width: 100%;
+        }
         height: 12.9rem;
+        @include resp(420) {
+          height: 14rem;
+        }
         background: #303a52;
         border-radius: 0.4rem;
 
@@ -88,6 +129,13 @@ body {
           left: 3rem;
           display: flex;
           width: 50rem;
+          @include resp(500) {
+            width: 90%;
+            top: 2.6rem;
+          }
+          @include resp(420) {
+            top: 2.6rem;
+          }
           height: 8.3rem;
           &--image {
             width: 6rem;
@@ -96,6 +144,9 @@ body {
             border: 0;
           }
           &--text {
+            @include resp(500) {
+              max-width: 100%;
+            }
             display: flex;
             flex-direction: column;
             margin-left: 2.3rem;
@@ -122,6 +173,13 @@ body {
           position: relative;
           top: 0.8rem;
           left: 25.3rem;
+          @include resp(500) {
+            left: 30% !important;
+          }
+          @include resp(420) {
+            left: 25% !important;
+            top: 2rem;
+          }
           &--item {
             margin-left: 1.2rem;
             &--title {
