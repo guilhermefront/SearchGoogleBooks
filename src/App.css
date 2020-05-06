@@ -123,6 +123,7 @@ body {
               .app__booklist--item--container--bookinfo--text {
                 max-width: 61%; } }
             .app__booklist--item--container--bookinfo--text--title {
+              cursor: pointer;
               margin-top: 0.7rem;
               position: relative;
               top: 0;

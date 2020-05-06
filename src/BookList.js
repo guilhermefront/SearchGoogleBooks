@@ -38,7 +38,13 @@ const BookList = () => {
   ) : (
     <ul className="app__booklist">
       {bookData.map((dataValues) => (
-        <li key={dataValues.id} className="app__booklist--item">
+        <li
+          key={dataValues.id}
+          className="app__booklist--item"
+          onClick={() => {
+            window.open(`${dataValues.volumeInfo.infoLink}`);
+          }}
+        >
           <div className="app__booklist--item--container">
             <div className="app__booklist--item--container--bookinfo">
               <img
@@ -60,22 +66,75 @@ const BookList = () => {
                     : dataValues.volumeInfo.title}
                 </span>
                 {dataValues.volumeInfo &&
+                dataValues.volumeInfo.authors &&
+                window.innerWidth <= 320 ? (
+                  <p className="app__booklist--item--container--bookinfo--text--author">
+                    {`${
+                      dataValues.volumeInfo.authors[0] >= 15
+                        ? dataValues.volumeInfo.authors[0].slice(0, 15)
+                        : dataValues.volumeInfo.authors[0]
+                    }...`}
+                  </p>
+                ) : dataValues.volumeInfo &&
                   dataValues.volumeInfo.authors &&
-                  window.innerWidth <= 500 &&
-                  (`${
-                    dataValues.volumeInfo.authors[0]
-                      ? dataValues.volumeInfo.authors[0]
-                      : dataValues.volumeInfo.authors[1] &&
-                        dataValues.volumeInfo.authors[1]
-                  }`.length > 15 ? (
+                  window.innerWidth <= 350 ? (
+                  `${
+                    dataValues.volumeInfo.authors[1]
+                      ? dataValues.volumeInfo.authors[1] +
+                        dataValues.volumeInfo.authors[0]
+                      : dataValues.volumeInfo.authors[0]
+                  }`.length > 20 ? (
                     <p className="app__booklist--item--container--bookinfo--text--author">
-                      {dataValues.volumeInfo.authors[0].slice(0, 15)}
+                      {`${
+                        dataValues.volumeInfo.authors[1]
+                          ? dataValues.volumeInfo.authors[1] +
+                            ", " +
+                            dataValues.volumeInfo.authors[0]
+                          : dataValues.volumeInfo.authors[0].slice(0, 20)
+                      }...`}
                     </p>
                   ) : (
+                    dataValues.volumeInfo &&
+                    dataValues.volumeInfo.authors && (
+                      <p className="app__booklist--item--container--bookinfo--text--author">
+                        {dataValues.volumeInfo.authors.join(", ")}
+                      </p>
+                    )
+                  )
+                ) : dataValues.volumeInfo &&
+                  dataValues.volumeInfo.authors &&
+                  window.innerWidth <= 500 ? (
+                  `${
+                    dataValues.volumeInfo.authors[1]
+                      ? dataValues.volumeInfo.authors[1] +
+                        dataValues.volumeInfo.authors[0]
+                      : dataValues.volumeInfo.authors[0]
+                  }`.length > 25 ? (
+                    <p className="app__booklist--item--container--bookinfo--text--author">
+                      {`${
+                        dataValues.volumeInfo.authors[1]
+                          ? dataValues.volumeInfo.authors[1] +
+                            ", " +
+                            dataValues.volumeInfo.authors[0]
+                          : dataValues.volumeInfo.authors[0].slice(0, 25)
+                      }...`}
+                    </p>
+                  ) : (
+                    dataValues.volumeInfo &&
+                    dataValues.volumeInfo.authors && (
+                      <p className="app__booklist--item--container--bookinfo--text--author">
+                        {dataValues.volumeInfo.authors.join(", ")}
+                      </p>
+                    )
+                  )
+                ) : (
+                  dataValues.volumeInfo &&
+                  dataValues.volumeInfo.authors && (
                     <p className="app__booklist--item--container--bookinfo--text--author">
                       {dataValues.volumeInfo.authors.join(", ")}
                     </p>
-                  ))}
+                  )
+                )}
               </div>
             </div>
 
