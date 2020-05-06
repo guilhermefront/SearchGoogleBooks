@@ -1,7 +1,6 @@
 # Made with ReactJS using google books API.
 
-[!preview image](https://github.com/GuilhermeSND/SearchGoogleBooks/blob/master/preview.png)
-
+![Image preview](https://github.com/GuilhermeSND/SearchGoogleBooks/blob/master/preview.png?raw=true)
 -------------
 
 ## Available Scripts
