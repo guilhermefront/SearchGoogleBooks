@@ -103,7 +103,7 @@ const BookList = () => {
                   )
                 ) : dataValues.volumeInfo &&
                   dataValues.volumeInfo.authors &&
-                  window.innerWidth <= 500 ? (
+                  window.innerWidth >= 500 ? (
                   `${
                     dataValues.volumeInfo.authors[1]
                       ? dataValues.volumeInfo.authors[1] +

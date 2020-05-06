@@ -32,7 +32,7 @@ const SearchBar = () => {
             type: "SET_URL",
           });
         }}
-        src="./mdi_search.svg"
+        src="mdi_search.svg"
         className="app__form--searchicon"
       ></img>
     </form>
