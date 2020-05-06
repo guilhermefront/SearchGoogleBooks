@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
       <BookManagement>
-        <span className="app__title">Search for books</span>
+        <span className="app__title">Search for information about books</span>
         <SearchBar />
         <BookList />
       </BookManagement>
